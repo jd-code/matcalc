@@ -102,6 +102,7 @@ class Vector3
 		return *this;
 	    }
 
+	
 	//! addition of two vectors
 	inline Vector3 operator + (const Vector3 &u) const
 	    {   return Vector3 (x+u.x, y+u.y, z+u.z) ;
@@ -112,6 +113,7 @@ class Vector3
 	    {   return Vector3 (x-u.x, y-u.y, z-u.z) ;
 	    }
 
+	
 	//! scalar product of two vectors
 	inline GLfloat operator * (const Vector3 &u) const
 	    {   return  x * u.x  +  y * u.y  +  z * u.z  ;
@@ -125,16 +127,18 @@ class Vector3
 				);
 	    }
 
+	
 	//! comparison of two vectors
-	inline int operator == (const Vector3 &v) const
+	inline bool operator == (const Vector3 &v) const
 	    {	return ((x==v.x) && (y==v.y) && (z==v.z));
 	    }
 	
 	//! comparison of two vectors
-	inline int operator != (const Vector3 &v) const
+	inline bool operator != (const Vector3 &v) const
 	    {	return ((x!=v.x) || (y!=v.y) || (z!=v.z));
 	    }
-	
+
+
 	//! the norm of the vector
 	inline GLfloat norm (void) const
 	    {   return sqrt (x*x + y*y + z*z) ;
@@ -149,6 +153,11 @@ class Vector3
 //! multiplication of a vector by a scalar
 inline Vector3 operator * (GLfloat a, Vector3 v)
 {   return Vector3 (a*v.x, a*v.y, a*v.z);
+}
+
+//! negation of a vectors (unary -)
+inline Vector3 operator - (const Vector3 &u)
+{   return Vector3 (-u.x, -u.y, -u.z) ;
 }
 
 //! stream output of a Vector3 (WARNING ! with const precision of 4 digits only)
@@ -240,7 +249,65 @@ class Matrix4
 		    r.m[i][j] += m[i][k] * b.m[k][j] ;
 		return r;
 	    }
+
+	//! determinant
+	inline GLfloat det (void) const
+	    {
+		return ( m[0][0]*m[1][1]*m[2][2] - m[1][0]*m[0][1]*m[2][2] + m[2][0]*m[0][1]*m[1][2]
+			-m[0][0]*m[2][1]*m[1][2] + m[1][0]*m[2][1]*m[0][2] - m[2][0]*m[1][1]*m[0][2]);
+	    }
 };
+
+//! inversion of a matrix
+inline Matrix4 operator ! (Matrix4 const &  M)
+{
+    Matrix4 inv;
+    GLfloat detm = M.det() ;
+    if (fabs(detm) < 0.000001) {
+        bzouzerr << "null determninant!" << endl;
+        return inv;
+    }
+
+
+    inv.m [0][0] = ( M.m[1][1]*M.m[2][2] - M.m[2][1]*M.m[1][2] ) / detm ;
+    inv.m [1][0] = ( M.m[2][0]*M.m[1][2] - M.m[1][0]*M.m[2][2] ) / detm ;
+    inv.m [2][0] = ( M.m[1][0]*M.m[2][1] - M.m[2][0]*M.m[1][1] ) / detm ;
+
+    inv.m [0][1] = ( M.m[2][1]*M.m[0][2] - M.m[0][1]*M.m[2][2] ) / detm ;
+    inv.m [1][1] = ( M.m[0][0]*M.m[2][2] - M.m[2][0]*M.m[0][2] ) / detm ;
+    inv.m [2][1] = ( M.m[2][0]*M.m[0][1] - M.m[0][0]*M.m[2][1] ) / detm ;
+
+    inv.m [0][2] = ( M.m[0][1]*M.m[1][2] - M.m[1][1]*M.m[0][2] ) / detm ;
+    inv.m [1][2] = ( M.m[1][0]*M.m[0][2] - M.m[0][0]*M.m[1][2] ) / detm ;
+    inv.m [2][2] = ( M.m[0][0]*M.m[1][1] - M.m[1][0]*M.m[0][1] ) / detm ;
+
+    // the last row and line are copied
+    int i;
+    for (i=0; i<4; i++) {
+        inv.m[3][i] = M.m[3][i];
+        inv.m[i][3] = M.m[i][3];
+    }
+
+    return inv;
+}
+
+//! transposition of some matrix
+inline Matrix4 operator ~ (Matrix4 const &  M)
+{
+    Matrix4 transposed;
+    int i, j;
+    for (i=0; i<3; i++)
+        for (j=0; j<3; j++)
+            transposed.m [i][j] = M.m[j][i];
+    // the last row and line are copied
+    for (i=0; i<4; i++) {
+        transposed.m[3][i] = M.m[3][i];
+        transposed.m[i][3] = M.m[i][3];
+    }
+
+    return transposed;
+}
+
 
 //! multiplication of matrices ( beware ! non-commutative ! )
 // inline Matrix4 operator * (Matrix4 const & a, Matrix4 const & b)

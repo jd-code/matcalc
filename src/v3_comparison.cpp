@@ -16,7 +16,7 @@ int precision_test (void)
 	bzouzerr << "warning : max precision is only around : 1 / " << d << endl ;
 	return 1;
     } else {
-	cerr << "max precision is around : 1 / " << d << endl ;
+	cout << "max precision is around : 1 / " << d << endl ;
 	return 0;
     }
 }

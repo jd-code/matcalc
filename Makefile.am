@@ -29,11 +29,11 @@
 
 SUBDIRS = src
 
-vimtest: all
+vimtest: check all
 	## ./src/Caroube
 	## startx -display :1 -e ./src/Caroube -- :1 -depth 16 -ac
 
-vimtestw32: all
+vimtestw32: check all
 	## rm -f ./src/Caroube.exe
 	## mv ./src/Caroube ./src/Caroube.exe
 

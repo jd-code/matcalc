@@ -4,7 +4,7 @@
 # General configuration options
 #---------------------------------------------------------------------------
 PROJECT_NAME           = matcalc
-PROJECT_NUMBER         = 0.0
+PROJECT_NUMBER         = @VERSION@
 OUTPUT_DIRECTORY       = matcalc-doc
 OUTPUT_LANGUAGE        = English
 EXTRACT_ALL            = YES

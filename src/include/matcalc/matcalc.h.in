@@ -41,11 +41,7 @@ class Vector4;
 //! returns the release-name of this module
 inline const char * get_matcalc_version (void)
 {
-#ifdef BZOUTOTALOCAL
-    return ("Total-Local® $Id$");
-#else
-    return ("$Id$");
-#endif
+    return ("@BZOUTOTALOCALBUILD@" "$Id$");
 }
 
 // --------------- Vector3 --------------------------------------------------

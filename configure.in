@@ -30,7 +30,7 @@ dnl
 dnl matcalc@disjunkt.com  -  http://matcalc.disjunkt.com/
 
 dnl Process this file with autoconf to produce a configure script.
-AC_INIT(src/include/matcalc/matcalc.h)
+AC_INIT(src/include/matcalc/matcalc.h.in)
 
 dnl Detect the canonical host and target build environment
 AC_CANONICAL_HOST
@@ -154,10 +154,23 @@ AC_SUBST(GL_LIBS)
 dnl	GLUT_LIBS="$GL_LIBS -lGLU -lglut"
 dnl	AC_SUBST(GLUT_LIBS)
 
+
+dnl check for Total-Local build
+if test "$BZOUTOTALOCAL" ; then
+    
+    BZOUTOTALOCALBUILD="Total-Local® "
+    echo "we use Total-Local® build"
+else
+    BZOUTOTALOCALBUILD=""
+fi
+AC_SUBST(BZOUTOTALOCALBUILD)
+
+
 # Finally create all the generated files
 AC_OUTPUT([
 	Makefile
 	src/Makefile
 	matcalc.dox
+	src/include/matcalc/matcalc.h
 ])
 

@@ -57,3 +57,5 @@ m4_multiply_SOURCES = m4_multiply.cpp
 
 check_PROGRAMS = $(TESTS)
 
+##SUBDIRS = include
+

@@ -42,12 +42,3 @@ vimtestw32: all
 ## DISTCLEANFILES = ./src/Caroube.exe ./src/stderr.txt ./src/stdout.txt
 
 
-## 
-##  $Log: Makefile.am,v $
-##  Revision 1.1  2004/02/28 15:28:24  jd
-##  Initial revision
-##
-##
-## 
-
-

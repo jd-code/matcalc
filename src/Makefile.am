@@ -36,9 +36,3 @@
 
 pkginclude_HEADERS =	include/matcalc/matcalc.h
 
-## 
-##  $Log: Makefile.am,v $
-##  Revision 1.1  2004/02/28 15:28:24  jd
-##  Initial revision
-##
-##

@@ -160,13 +160,3 @@ AC_OUTPUT([
 	src/Makefile
 ])
 
-dnl
-dnl $Log: configure.in,v $
-dnl Revision 1.2  2004/04/27 23:09:44  jd
-dnl tweaked for msys/mingw
-dnl
-dnl Revision 1.1.1.1  2004/02/28 15:28:24  jd
-dnl Imported sources
-dnl
-dnl
-dnl

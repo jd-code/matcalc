@@ -295,24 +295,3 @@ inline ostream& operator<<(ostream& out, const Vector4 &v)
 
 #endif // MATCALC_H_INC
 
-/*
- *  $Log: matcalc.h,v $
- *  Revision 1.2  2004/03/27 15:42:40  jd
- *  added M_PI and co... definitions
- *
- *  Revision 1.1.1.1  2004/02/28 15:28:24  jd
- *  Imported sources
- *
- *  Revision 1.4  2003/04/02 14:16:25  jd
- *  small typos
- *
- *  Revision 1.3  2002/12/07 20:59:11  jd
- *  added Matrix4 first operators and constructors
- *
- *  Revision 1.2  2002/12/05 00:47:39  jd
- *  added Vector3 and its florilege of operators
- *
- *  Revision 1.1  2002/12/02 18:51:12  jd
- *  additions for raw modularisation before merging with sounds
- *
- */

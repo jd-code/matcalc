@@ -36,3 +36,16 @@
 
 pkginclude_HEADERS =	include/matcalc/matcalc.h
 
+TESTS = v3_comparison	\
+	v3_substraction \
+	v3_addition	\
+	v3_vectorialprod
+	
+
+v3_addition_SOURCES = v3_addition.cpp
+v3_substraction_SOURCES = v3_substraction.cpp
+v3_comparison_SOURCES = v3_comparison.cpp
+v3_vectorialprod_SOURCES = v3_vectorialprod.cpp
+
+check_PROGRAMS = $(TESTS)
+

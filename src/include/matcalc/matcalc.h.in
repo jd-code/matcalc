@@ -54,9 +54,9 @@ class Vector3
 
     public:
 
-	GLfloat x,  //! TD's abscissa
-		y,  //! TD's orderly
-		z;  //! TD's elevation
+	GLfloat x,  //!< Vector3's abscissa
+		y,  //!< Vector3's orderly
+		z;  //!< Vector3's elevation
 
 
 	//! the regular constructor from three numbers
@@ -117,6 +117,19 @@ class Vector3
 	    {   return  x * u.x  +  y * u.y  +  z * u.z  ;
 	    }
 
+	//! vectorial product of two vectors
+	inline Vector3 operator ^ (const Vector3 &v) const
+	    {	return Vector3	(   y*v.z - z*v.y,
+				    z*v.x - x*v.z,
+				    x*v.y - y*v.x
+				);
+	    }
+
+	//! comparison of two vectors
+	inline int operator == (const Vector3 &v) const
+	    {	return ((x==v.x) && (y==v.y) && (z==v.z));
+	    }
+	
 	//! the norm of the vector
 	inline GLfloat norm (void) const
 	    {   return sqrt (x*x + y*y + z*z) ;

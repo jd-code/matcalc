@@ -43,7 +43,8 @@ TESTS = v3_comparison		\
 	v3_vectorialprod	\
 	m4_transpose		\
 	m4_invert		\
-	m4_multiply
+	m4_multiply		\
+	m4_reorth
 	
 
 v3_comparison_SOURCES = v3_comparison.cpp
@@ -54,6 +55,7 @@ v3_vectorialprod_SOURCES = v3_vectorialprod.cpp
 m4_transpose_SOURCES = m4_transpose.cpp
 m4_invert_SOURCES = m4_invert.cpp
 m4_multiply_SOURCES = m4_multiply.cpp
+m4_reorth_SOURCES = m4_reorth.cpp
 
 check_PROGRAMS = $(TESTS)
 

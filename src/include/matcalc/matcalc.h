@@ -38,6 +38,16 @@ using namespace std;
 class Vector3;
 class Vector4;
 
+//! returns the release-name of this module
+inline const char * get_matcalc_version (void)
+{
+#ifdef BZOUTOTALOCAL
+    return ("Total-Local® $Id$");
+#else
+    return ("$Id$");
+#endif
+}
+
 // --------------- Vector3 --------------------------------------------------
 //
 //! a three-GLfloat(s)/double(s)-in-a-column vector with facilities

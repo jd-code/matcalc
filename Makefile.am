@@ -41,4 +41,7 @@ vimtestw32: check all
 ##  additional file(s) to be removed when making dist...
 ## DISTCLEANFILES = ./src/Caroube.exe ./src/stderr.txt ./src/stdout.txt
 
+## bad hook for removing dummy-files created in order to have out-of-source-dir build to work
+distclean-local:
+	rm src/include/Makefile
 

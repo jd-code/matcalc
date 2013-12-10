@@ -131,9 +131,16 @@ dnl	)
 dnl	CFLAGS="$CFLAGS $SDL_CFLAGS"
 dnl	CXXFLAGS="$CXXFLAGS $SDL_CFLAGS"
 
+
+dnl add the prefix to include search
+CFLAGS="-I ${prefix}/include $CFLAGS"
+CXXFLAGS="-I ${prefix}/include $CXXFLAGS"
+
+
 dnl add our local include dir
 CFLAGS="-I"`pwd`"/src/include/matcalc $CFLAGS"
 CXXFLAGS="-I"`pwd`"/src/include/matcalc $CXXFLAGS"
+
 
 dnl Check for OpenGL
 AC_MSG_CHECKING(for OpenGL support)

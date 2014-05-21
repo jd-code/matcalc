@@ -45,3 +45,6 @@ vimtestw32: check all
 distclean-local:
 	rm src/include/Makefile
 
+.PHONY: tar
+tar: dist-gzip
+	mv ${PACKAGE}-${VERSION}.tar.gz ${PACKAGE}_${VERSION}.orig.tar.gz

@@ -31,7 +31,7 @@ int main (void)
 
 
     
-    if (d > 6.0e-8) {
+    if (d > 1.0e-6) {
 	bzouzerr << "error : det(m.reorth()) = " << d << endl ;
 	return 1;
     } else {

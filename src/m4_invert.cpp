@@ -23,7 +23,7 @@ int main (void)
 
     GLfloat d = dist(ir1, r2);
 
-    if (d > 5.0e-7) {
+    if (d > 1.0e-6) {
 	bzouzerr << "error : d(ir1, r2) = " << d << endl ;
 	return 1;
     } else {

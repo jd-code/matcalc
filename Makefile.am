@@ -41,10 +41,18 @@ vimtestw32: check all
 ##  additional file(s) to be removed when making dist...
 ## DISTCLEANFILES = ./src/Caroube.exe ./src/stderr.txt ./src/stdout.txt
 
+clean-local:
+	rm -f "${PACKAGE}_${VERSION}.orig.tar.gz" tarfiles.txt
+
 ## bad hook for removing dummy-files created in order to have out-of-source-dir build to work
 distclean-local:
-	rm src/include/Makefile
+	rm -f src/include/Makefile
+	rm -f "${PACKAGE}_${VERSION}.orig.tar.gz" tarfiles.txt
 
 .PHONY: tar
-tar: dist-gzip
-	mv ${PACKAGE}-${VERSION}.tar.gz ${PACKAGE}_${VERSION}.orig.tar.gz
+tar: 
+	repozclean && autoall
+	find . | grep -v '\.git' | grep -v 'debian-src' | grep -v 'autom4te' > tarfiles.txt
+	bozoconf
+	tar -zcphf "${PACKAGE}_${VERSION}.orig.tar.gz" --no-recursion --transform='s=^='"${PACKAGE}"_"${VERSION}"'/=' -T tarfiles.txt
+	tar -ztvf "${PACKAGE}_${VERSION}.orig.tar.gz"

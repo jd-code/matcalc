@@ -1,0 +1,25 @@
+This work was packaged for Debian by:
+
+    Jean-Daniel Pauget <pauget@nekodune.com> on Tue, 20 May 2014 16:08:58 +0200
+
+It was downloaded from http://matcalc.nekodune.com
+
+Upstream Author(s):
+
+    Cristelle Barillon
+    Jean-Daniel Pauget
+
+Copyright:
+
+    (C)2002 Cristelle Barillon & Jean-Daniel Pauget
+
+License:
+
+    LGPL version 2.1
+
+The Debian packaging is:
+
+    Copyright (C) 2014 Jean-Daniel Pauget <pauget@nekodune.com>
+
+and is licensed under the LGPL version 2.1
+see `/usr/share/common-licenses/LGPL-2.1'.

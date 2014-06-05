@@ -1,3 +1,9 @@
+matcalc (0.1.1-1~precise1) precise; urgency=low
+
+  * Package naming scheme
+
+ -- Jean-Daniel Pauget <pauget@nekodune.com>  Thu, 05 Jun 2014 10:06:39 +0200
+
 matcalc (0.1.1-1) precise; urgency=low
 
   * Initial release

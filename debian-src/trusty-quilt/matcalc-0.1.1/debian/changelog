@@ -1,0 +1,11 @@
+matcalc (0.1.1-1~trusty) trusty; urgency=low
+
+  * Package naming scheme
+
+ -- Jean-Daniel Pauget <pauget@nekodune.com>  Thu, 05 Jun 2014 10:09:42 +0200
+
+matcalc (0.1.0-1) trusty; urgency=low
+
+  * Initial release
+
+ -- Jean-Daniel Pauget <pauget@nekodune.com>  Tue, 20 May 2014 16:08:58 +0200

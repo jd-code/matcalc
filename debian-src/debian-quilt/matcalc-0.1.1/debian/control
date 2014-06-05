@@ -1,0 +1,16 @@
+Source: matcalc
+Priority: extra
+Maintainer: Jean-Daniel Pauget <pauget@nekodune.com>
+Build-Depends: debhelper (>= 7), libgl1-mesa-dev | libgl-dev, libstdc++6-4.4-dev | libstdc++-dev, autotools-dev
+Standards-Version: 3.8.4
+Section: libs
+Homepage: http://matcalc.nekodune.com
+
+Package: matcalc0-dev
+Section: libdevel
+Architecture: any
+Depends: libgl1-mesa-dev | libgl-dev, libstdc++6-4.4-dev | libstdc++-dev, libc-dev, ${misc:Depends}
+Description: small basic 3d,4d algebra C++ templates
+ small basic C++ templates for storing and basic
+ computation with openGL and SDL
+
